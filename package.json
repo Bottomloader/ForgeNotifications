@@ -4,7 +4,9 @@
   "description": "WIP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/docgen.js",
+    "rebuild": "tsc && tsc-alias",
+    "test": "node __test__/index.js"
   },
   "repository": {
     "type": "git",
