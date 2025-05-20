@@ -1,0 +1,28 @@
+{
+  "name": "forgenotifications",
+  "version": "1.0.0",
+  "description": "WIP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bottomloader/ForgeNotifications.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bottomloader/ForgeNotifications/issues"
+  },
+  "homepage": "https://github.com/Bottomloader/ForgeNotifications#readme",
+  "devDependencies": {
+    "@tryforge/forgescript": "github:tryforge/ForgeScript#dev",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@tryforge/forge.db": "^2.0.9",
+    "youtubei": "^1.6.7"
+  }
+}
