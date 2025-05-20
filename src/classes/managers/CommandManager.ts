@@ -1,9 +1,9 @@
-// import { BaseCommandManager } from '@tryforge/forgescript'
-// import type { Events } from 'youtubei'
+import { BaseCommandManager } from '@tryforge/forgescript'
+import type { Events } from 'youtubei'
 
 
-// export const handlerName = "ForgeLink"
+export const handlerName = "ForgeNotifications"
 
-// export class YoutubeManager extends BaseCommandManager<keyof Events> {
-//     handlerName = 'YTCommands'
-// }
+export class YoutubeManager extends BaseCommandManager<keyof Events> {
+     handlerName = 'YTCommands'
+}

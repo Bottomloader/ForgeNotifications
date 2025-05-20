@@ -1,31 +1,28 @@
 import { EventManager, ForgeClient, ForgeExtension, FunctionManager } from '@tryforge/forgescript'
 import { DataBase } from '@tryforge/forge.db'
-// import { YoutubeManager as CommandManager } from '@managers/CommandManager'
+import { YoutubeManager as CommandManager } from '@managers/CommandManager'
 import Youtube from 'youtubei'
 import { join } from 'path'
 
 export interface YtConfig {
-
-
-// Config here if needed.
-
+  // Horror
 }
 
-export class ForgeNotifs extends ForgeExtension {
-    name = 'Forge.notifs'
-    description = 'ForgeScript integration with youtubei'
+export class ForgeNotifications extends ForgeExtension {
+    name = 'forge.notifications'
+    description = ''
     version = '1.0.0'
 
-    // #kc: CommandManager
+     #kc: CommandManager
 
      constructor(public options: YtConfig) {
         super()
     }
 
-    // this.#kc = new CommandManager(client);
+    this.#kc = new CommandManager(client);
 
     public init() {
-    //  EventManager.load('youtubeEvents', join(__dirname, '../../events'));
+     EventManager.load('youtubeEvents', join(__dirname, '../../events'));
      this.load(join(__dirname, '../../natives'));
     }
 }
