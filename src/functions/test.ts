@@ -1,5 +1,5 @@
-import { MessageType } from "discord.js"
-import { Arg, NativeFunction } from @tryforge/forgescript"
+import { MessageType } from "discord.js";
+import { Arg, NativeFunction } from "@tryforge/forgescript";
 
 export default new NativeFunction({
     name: "$test",
@@ -10,3 +10,4 @@ export default new NativeFunction({
     async execute(ctx, args) {
         return this.success("Hi"!)
     },
+})

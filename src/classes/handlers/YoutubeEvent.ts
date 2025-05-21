@@ -1,5 +1,5 @@
 import { BaseEventHandler, ForgeClient } from '@tryforge/forgescript'
-import { ForgeNotifications } from '@structures/ForgeNotifications'
+import { ForgeNotifications } from '../structures/ForgeNotifications'
 
 type EventNames = 
    | 'videoUpload'
@@ -9,8 +9,8 @@ type EventNames =
 export class YoutubeEvent<T extends INotificationsEvents = INotificationsEvents> extends BaseEventHandler<any, T> {
      register(client: ForgeClient): void {
          const forgeNotifs = client.getExtension(ForgeNotifications, true);
-         if (forgeNotifs.event path) {
-             forgeNotifs.event path.on(this.name as any, (...args: any[]) => {
+         if (forgeNotifs.event.path) {
+             forgeNotifs.event.path.on(this.name as any, (...args: any[]) => {
                  this.listener.apply(client, args);
              });
          } else { 
