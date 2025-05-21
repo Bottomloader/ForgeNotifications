@@ -34,7 +34,7 @@ class ForgeNotifications extends forgescript_1.ForgeExtension {
         forgescript_1.EventManager.load('ForgeNotificationsEvents', __dirname + '/../../events');
         this.load((0, path_1.join)(__dirname, '../../functions'));
         if (this.options?.events?.length)
-            client.events.load("ForgeDBEvents", this.options.events);
+            client.events.load("ForgeNotificationsEvents", this.options.events);
     }
 }
 exports.ForgeNotifications = ForgeNotifications;

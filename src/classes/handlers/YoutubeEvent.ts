@@ -2,8 +2,7 @@ import { BaseEventHandler, ForgeClient } from '@tryforge/forgescript'
 import { ForgeNotifications } from '../structures/ForgeNotifications'
 
 type EventNames = 
-   | 'videoUpload'
-   | 'liveStart'
+   | 'ytNewVideo'
    ;
     
 export class YoutubeEvents extends BaseEventHandler<any> {
