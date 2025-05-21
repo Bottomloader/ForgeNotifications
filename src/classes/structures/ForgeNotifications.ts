@@ -1,11 +1,12 @@
 import { EventManager, ForgeClient, ForgeExtension, FunctionManager } from '@tryforge/forgescript'
 import { YoutubeManager as CommandManager } from '../managers/CommandManager'
+import { EventNames } from "../handlers/YoutubeEvent"
 import { join } from 'path'
 import fs from 'fs'
 
 export interface YtConfig {
-  interval: number
-  events: string
+  interval?: number
+  events?: EventNames[]
 }
 
 export class ForgeNotifications extends ForgeExtension {

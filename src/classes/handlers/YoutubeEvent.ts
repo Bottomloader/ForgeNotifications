@@ -1,7 +1,7 @@
 import { BaseEventHandler, ForgeClient } from '@tryforge/forgescript'
 import { ForgeNotifications } from '../structures/ForgeNotifications'
 
-type EventNames = 
+export type EventNames = 
    | 'ytNewVideo'
    ;
     
