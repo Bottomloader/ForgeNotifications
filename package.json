@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@tryforge/forge.db": "^2.0.9",
-    "youtubei": "^1.6.7"
+    "youtubei.js": "^13.4.0"
   }
 }
