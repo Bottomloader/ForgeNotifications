@@ -19,7 +19,6 @@ export class ForgeNotifications extends ForgeExtension {
 
     public init(client: ForgeClient): void {
       this.commands = new CommandManager(client);
-      EventManager.load('youtubeEvents', join(__dirname, '../../events'));
-      this.load(join(__dirname, '../../natives'));
+      this.load(join(__dirname, '../../functions'));
     }
 }

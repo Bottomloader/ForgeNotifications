@@ -1,1 +1,1 @@
-export * from './classes/structures/ForgeNotifs'
+export * from './classes/structures/ForgeNotifications'

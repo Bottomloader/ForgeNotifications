@@ -6,15 +6,8 @@ type EventNames =
    | 'liveStart'
    ;
     
-export class YoutubeEvent<T extends INotificationsEvents = INotificationsEvents> extends BaseEventHandler<any, T> {
+export class YoutubeEvents extends BaseEventHandler<any> {
      register(client: ForgeClient): void {
-         const forgeNotifs = client.getExtension(ForgeNotifications, true);
-         if (forgeNotifs.event.path) {
-             forgeNotifs.event.path.on(this.name as any, (...args: any[]) => {
-                 this.listener.apply(client, args);
-             });
-         } else { 
-             console.warn(`[ForgeNotifications] Attempted to register event "${this.name}" but Event Manager is not initialized.`);
-         }
+         client.getExtension(ForgeNotifications, true)
      }
  }
