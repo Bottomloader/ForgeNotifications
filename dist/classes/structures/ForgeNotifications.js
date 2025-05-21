@@ -17,7 +17,8 @@ class ForgeNotifications extends forgescript_1.ForgeExtension {
     constructor(options) {
         super();
         this.options = options;
-        const value = !!options.interval ? options.interval : 300000;
+        const value = options?.interval ?? 300000;
+        fs_1.default.mkdirSync("forgeNotificationsDB");
         if (fs_1.default.existsSync('/forgeNotificationsDB/youtube.json')) {
             const dataBase = JSON.parse(fs_1.default.readFileSync('/forgeNotificationsDB/youtube.json', 'utf-8'));
             dataBase.interval = value;
