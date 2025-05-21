@@ -15,7 +15,7 @@ export class ForgeNotifications extends ForgeExtension {
 
     constructor(public options: YtConfig) {
       super()
-      const value = !!options.interval ? options.interval: 300000
+      const value = options?.interval ?? 300000
       if (fs.existsSync('/forgeNotificationsDB/youtube.json')) {
         const dataBase = JSON.parse(fs.readFileSync('/forgeNotificationsDB/youtube.json', 'utf-8'))
         dataBase.interval = value
