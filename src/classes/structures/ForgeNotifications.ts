@@ -17,19 +17,19 @@ export class ForgeNotifications extends ForgeExtension {
       super()
       const value = options?.interval ?? 300000
       fs.mkdirSync("forgeNotificationsDB");
-      if (fs.existsSync('/forgeNotificationsDB/youtube.json')) {
+      if (fs.existsSync('forgeNotificationsDB/youtube.json')) {
         const dataBase = JSON.parse(fs.readFileSync('/forgeNotificationsDB/youtube.json', 'utf-8'))
         dataBase.interval = value
-        fs.writeFileSync('/forgeNotificationsDB/youtube.json', JSON.stringify(dataBase, null, 2))
+        fs.writeFileSync('forgeNotificationsDB/youtube.json', JSON.stringify(dataBase, null, 2))
       } else {
         const dataBase = { interval: value }
-        fs.writeFileSync('/forgeNotificationsDB/youtube.json', JSON.stringify(dataBase, null, 2))
+        fs.writeFileSync('forgeNotificationsDB/youtube.json', JSON.stringify(dataBase, null, 2))
       }
     }
 
     public init(client: ForgeClient): void {
       this.commands = new CommandManager(client);
-      EventManager.load('ForgeNotificationsEvents', __dirname + '../../events')
+      EventManager.load('ForgeNotificationsEvents', __dirname + '/../../events')
       this.load(join(__dirname, '../../functions'));
     }
 }
