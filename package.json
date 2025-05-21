@@ -1,13 +1,13 @@
 {
-  "name": "forgenotifications",
-  "version": "1.0.0",
+  "name": "forge.notifications",
+  "version": "0.0.1",
   "description": "WIP",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-      "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/docgen.js",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/docgen.js", 
     "rebuild": "tsc && tsc-alias",
     "test": "node __test__/index.js"
-  },
+    "docgen": "tsc && typedoc src/index.ts && node dist/docgen",  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bottomloader/ForgeNotifications.git"
