@@ -5,6 +5,7 @@ import fs from 'fs'
 
 export interface YtConfig {
   interval: number
+  events: string
 }
 
 export class ForgeNotifications extends ForgeExtension {
@@ -12,7 +13,7 @@ export class ForgeNotifications extends ForgeExtension {
     description = ''
     version = '1.0.0'
     commands!: any
-
+    
     constructor(public options: YtConfig) {
       super()
       const value = options?.interval ?? 300000
@@ -31,5 +32,7 @@ export class ForgeNotifications extends ForgeExtension {
       this.commands = new CommandManager(client);
       EventManager.load('ForgeNotificationsEvents', __dirname + '/../../events')
       this.load(join(__dirname, '../../functions'));
+      if (this.options?.events?.length)
+        client.events.load("ForgeDBEvents", this.options.events)
+      }
     }
-}
