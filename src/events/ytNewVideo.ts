@@ -2,6 +2,7 @@ import { YoutubeEvents } from "../classes/handlers/YoutubeEvent"
 import { ForgeNotifications } from "../classes/structures/ForgeNotifications"
 import { Interpreter } from "@tryforge/forgescript"
 import { Innertube } from "youtubei.js"
+import fs from "fs"
 
 let youtube: Innertube;
 (async() => {
@@ -20,11 +21,13 @@ export default new YoutubeEvents({
     async function newVid() {
       const channel = await youtube.getChannel('nfyhDAexlFbGW--V')
       latestVid = await channel.videos[0]
-    }    
+      const dataBase = JSON.parse(fs.readFileSync('/forgeNotificationsDB/youtube.json', 'utf-8'))
+      dataBase.infoObj = latestVid
+    }
     setInterval(newVid, 100000)
     for (const command of commands) {
       Interpreter.run({
-        obj: latestVid,
+        obj: {},
         client: this,
         command,
         data: command.complied.code
