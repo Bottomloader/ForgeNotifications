@@ -1,12 +1,17 @@
 import { EventManager, ForgeClient, ForgeExtension, FunctionManager } from '@tryforge/forgescript'
 import { YoutubeManager as CommandManager } from '../managers/CommandManager'
-import { EventNames } from "../handlers/YoutubeEvent"
+import { EventData } from "../handlers/YoutubeEvent"
+import { TypedEmitter } from "tiny-typed-emitter"
 import { join } from 'path'
 import fs from 'fs'
 
 export interface YtConfig {
   interval?: number
-  events?: EventNames[]
+  events?: Array<keyof EventData>
+}
+
+export type TransformEvents<T> = {
+    [P in keyof T]: T[P] extends any[] ? (...args: T[P]) => any : never
 }
 
 export class ForgeNotifications extends ForgeExtension {
@@ -14,6 +19,7 @@ export class ForgeNotifications extends ForgeExtension {
     description = ''
     version = '1.0.0'
     commands!: any
+    emitter = new TypedEmitter<TransformEvents<EventData>>()
     
     constructor(public options: YtConfig) {
       super()
