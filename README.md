@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.ibb.co/fGy7ByWL/Untitled7-20250521012828.png" alt="ForgeNot logo" width="200" height="200"></p>
+<p align="center"><img src="https://i.ibb.co/4gpD4HWM/Forge-Notifications.png" alt="ForgeNot logo" width="200" height="200"></p>
 <h1 align="center">ForgeNotifications</h1>
 <p align="center">Tired of missing your favourite content creators live stream? Do you think you need a good notification for the live streams? ForgeNotifications is created for that, just type <code>npm i @tryforge/forge.notifications</code></p>
 
